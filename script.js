@@ -1,6 +1,6 @@
 const PLACEHOLDER_URL = "#";
-const CHANNEL_URL = PLACEHOLDER_URL; // TODO: remplacer par l'URL de la chaîne Build Club
-const COMMUNITY_URL = PLACEHOLDER_URL; // TODO: remplacer par l'URL de la communauté Build Club
+const CHANNEL_URL = "https://whatsapp.com/channel/0029VbCcx0V7tkjD8n3SvF0a";
+const COMMUNITY_URL = "https://chat.whatsapp.com/FFGV8CBoQgsFQeSWudwcLu?s=cl&p=a&ilr=0";
 
 const channelMessages = [
   {
