@@ -1,16 +1,22 @@
 :root {
   --accent: #10b981;
   --accent-strong: #059669;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9f9fb;
+  --border-color: #e4e4e7;
+  --text-primary: #09090b;
+  --text-secondary: #52525b;
 }
 
 body {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  background-color: #fbfbfa;
-  color: #09090b;
+  font-family: "Inter", sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
 }
 
 .editorial-title {
-  font-family: "Playfair Display", serif;
+  font-family: "Outfit", sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -44,52 +50,76 @@ body {
 }
 
 .section-wash {
-  background:
-    linear-gradient(180deg, rgba(16, 185, 129, 0.03), rgba(255, 255, 255, 0)),
-    #ffffff;
+  background-image: 
+    radial-gradient(circle at 2px 2px, #e5e7eb 1px, transparent 0);
+  background-size: 24px 24px;
+  background-color: #ffffff;
 }
 
 .section-wash-soft {
-  background: #fafafa;
+  background-color: #fafafa;
+  border-top: 1px solid #f1f1f4;
+  border-bottom: 1px solid #f1f1f4;
 }
 
 .accent-kicker {
-  border-color: rgba(16, 185, 129, 0.18);
-  background: rgba(16, 185, 129, 0.05);
-  color: #047857;
+  border-color: #000;
+  background: #000;
+  color: #fff;
 }
 
 .accent-button {
-  background: var(--accent-strong);
+  background: #000;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  font-size: 11px !important;
 }
 
 .accent-button:hover {
-  background: #047857;
+  background: #27272a;
 }
 
 .accent-outline {
-  border-color: rgba(16, 185, 129, 0.22);
-  background: rgba(16, 185, 129, 0.04);
-  color: #065f46;
+  border-color: #e4e4e7;
+  background: #fff;
+  color: #000;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  font-size: 11px !important;
 }
 
 .accent-outline:hover {
-  background: rgba(16, 185, 129, 0.08);
+  background: #f4f4f5;
+  border-color: #d4d4d8;
 }
 
 .landing-card {
   position: relative;
   overflow: hidden;
+  border-radius: 4px !important;
+  border: 1px solid #e4e4e7 !important;
+  box-shadow: none !important;
 }
 
-.landing-card::before {
+.landing-card::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
+  bottom: 0;
   right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.55), transparent);
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #10b981;
+  border-bottom: 2px solid #10b981;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.landing-card:hover::after {
+  opacity: 1;
 }
 
 .dark-feature-card {
@@ -110,7 +140,7 @@ body {
 }
 
 .prize-amount {
-  font-family: "Playfair Display", serif;
+  font-family: "Outfit", sans-serif;
   line-height: 0.9;
   letter-spacing: -0.05em;
 }
@@ -139,18 +169,17 @@ body {
 }
 
 .phone-shell {
-  border-color: rgba(16, 185, 129, 0.2);
-  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.12);
+  border-color: #000;
+  border-width: 8px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.15);
 }
 
 .marquee-section {
-  padding: 0.95rem 0;
-  border-top: 1px solid #e4e4e7;
-  border-bottom: 1px solid #e4e4e7;
+  padding: 0.75rem 0;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
   overflow: hidden;
-  background:
-    linear-gradient(180deg, rgba(16, 185, 129, 0.045), rgba(255, 255, 255, 0.8)),
-    #ffffff;
+  background: #fff;
 }
 
 .marquee-track {
@@ -173,12 +202,15 @@ body {
 }
 
 .marquee-item::before {
-  content: "";
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: #10b981;
-  opacity: 0.72;
+  content: "[";
+  color: #10b981;
+  font-weight: 900;
+}
+
+.marquee-item::after {
+  content: "]";
+  color: #10b981;
+  font-weight: 900;
 }
 
 @keyframes marquee {

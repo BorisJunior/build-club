@@ -142,12 +142,19 @@ function setupHeroGrid() {
         const dy = pointer.y - y;
         const distance = Math.sqrt(dx * dx + dy * dy);
         const proximity = Math.max(0, 1 - distance / radius);
-        const alpha = 0.05 + proximity * 0.13;
+        const alpha = 0.05 + proximity * 0.2;
+        const size = 1.5 + proximity * 2;
 
+        context.strokeStyle = `rgba(16, 185, 129, ${alpha})`;
+        context.lineWidth = 1;
+        
+        // Draw small crosses
         context.beginPath();
-        context.arc(x, y, 1 + proximity * 1.5, 0, Math.PI * 2);
-        context.fillStyle = `rgba(15, 118, 110, ${alpha})`;
-        context.fill();
+        context.moveTo(x - size, y);
+        context.lineTo(x + size, y);
+        context.moveTo(x, y - size);
+        context.lineTo(x, y + size);
+        context.stroke();
       }
     }
 
