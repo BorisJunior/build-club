@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CLAUDE.md / AGENTS.md - Build Club</title>
-  <meta name="description" content="Pourquoi CLAUDE.md ou AGENTS.md change vraiment la qualite d'un agent de code, avec une base concrete a telecharger et un prompt pour l'adapter a sa stack.">
+  <meta name="description" content="Pourquoi CLAUDE.md ou AGENTS.md change vraiment la qualite d'un agent de code, avec une base concrete a telecharger et un prompt court pour l'adapter a sa stack.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,11 +55,11 @@
           </h1>
 
           <p class="max-w-2xl text-base sm:text-lg text-zinc-700 leading-relaxed mb-4">
-            C'est le fichier que ton agent relit a chaque session. Chez Claude Code, c'est souvent `CLAUDE.md`. Chez d'autres outils, tu verras plutot `AGENTS.md`.
+            Chez Claude Code, c'est souvent `CLAUDE.md`. Sur d'autres outils comme Cursor ou Codex, tu verras plutot `AGENTS.md`.
           </p>
 
           <p class="max-w-2xl text-base sm:text-lg text-zinc-600 leading-relaxed">
-            C'est la que tu poses les vraies regles : comment coder, quoi verifier, quand tester, comment conclure, et jusqu'ou l'agent a le droit d'aller.
+            C'est le fichier que l'agent garde en memoire pendant qu'il travaille. Donc ce que tu ecris la-dedans, il est cense le respecter en continu : tests, typage, linting, checks, architecture, securite, definition de "termine".
           </p>
         </div>
       </div>
@@ -81,7 +81,7 @@
               <h3 class="text-sm font-bold text-zinc-950 font-display uppercase tracking-tight">Tests</h3>
             </div>
             <p class="text-xs text-zinc-500 leading-relaxed">
-              Tu peux imposer que le code soit verifie au lieu d'etre juste "produit".
+              Tu peux imposer des tests unitaires, des tests d'integration et des tests de bout en bout avant meme de considerer qu'une tache est terminee.
             </p>
           </div>
 
@@ -93,7 +93,7 @@
               <h3 class="text-sm font-bold text-zinc-950 font-display uppercase tracking-tight">Checks</h3>
             </div>
             <p class="text-xs text-zinc-500 leading-relaxed">
-              Tu peux forcer les vraies commandes de verification avant qu'une tache soit consideree comme terminee.
+              Tu peux forcer le format, le lint, le typage et les tests avec les vraies commandes du projet avant de conclure.
             </p>
           </div>
 
@@ -105,7 +105,7 @@
               <h3 class="text-sm font-bold text-zinc-950 font-display uppercase tracking-tight">Architecture</h3>
             </div>
             <p class="text-xs text-zinc-500 leading-relaxed">
-              Tu peux rappeler clairement les conventions, les couches et la structure que l'agent doit respecter.
+              Tu peux rappeler clairement les couches, les conventions, les ports, les adapters et la structure que l'agent doit respecter.
             </p>
           </div>
 
@@ -117,7 +117,7 @@
               <h3 class="text-sm font-bold text-zinc-950 font-display uppercase tracking-tight">Workflow</h3>
             </div>
             <p class="text-xs text-zinc-500 leading-relaxed">
-              Tu peux lui imposer une maniere de travailler : comprendre, planifier, coder, verifier, corriger, conclure.
+              Tu peux lui imposer une vraie sequence de travail : comprendre, planifier, coder, verifier, corriger, conclure.
             </p>
           </div>
         </div>
@@ -126,15 +126,15 @@
 
     <section class="section-compact section-wash border-b border-zinc-200/70">
       <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
-            <span class="text-[10px] font-bold tracking-[0.3em] text-emerald-600 uppercase font-mono">Ce que tu recuperes</span>
-            <h2 class="text-3xl sm:text-4xl text-zinc-950 mt-4 font-bold font-display tracking-tight uppercase">Une base concrete</h2>
+            <span class="text-[10px] font-bold tracking-[0.3em] text-emerald-600 uppercase font-mono">Prompt d'adaptation</span>
+            <h2 class="text-3xl sm:text-4xl text-zinc-950 mt-4 font-bold font-display tracking-tight uppercase">Tu pars d'une base serieuse</h2>
             <p class="text-sm text-zinc-500 mt-4 max-w-md leading-relaxed">
-              Le fichier partage ici reste ecrit dans l'esprit d'un vrai projet Python avec checks stricts et architecture serieuse.
+              Le fichier partage ici reste ecrit dans l'esprit d'un vrai projet Python avec checks stricts, typage, tests et architecture propre.
             </p>
             <p class="text-sm text-zinc-500 mt-4 max-w-md leading-relaxed">
-              Tu t'en sers comme base, puis tu l'adaptes a ta stack et a ton projet avec le prompt juste a cote.
+              Tu prends cette base, tu ajoutes le prompt ci-contre, puis tu envoies les deux a ton IA pour qu'elle te produise une version adaptee a ta stack et a ton projet.
             </p>
           </div>
 
@@ -147,33 +147,29 @@
               </div>
               <span class="resource-shell__label">prompt-adaptation</span>
             </div>
-            <pre class="resource-code" data-prompt-text>Je vais te donner une base de fichier CLAUDE.md.
+            <pre class="resource-code" data-prompt-text>Prends ce CLAUDE.md comme base.
 
-Important :
-- cette base vient d'un vrai workflow de developpement
-- elle est volontairement exigeante
-- elle est plutot ecrite avec une culture Python / checks stricts / architecture propre
-
-Je ne veux pas que tu la copies telle quelle.
 Je veux que tu t'en inspires fortement pour creer une version adaptee a mon projet.
 
 Conserve surtout :
-- la logique de rigueur
-- l'idee des tests obligatoires
-- l'idee des checks verts avant de conclure
-- les principes de securite
-- le workflow de session
+- la rigueur
+- les tests
+- les checks
+- le typage
+- la securite
+- le workflow
 - la definition de "termine"
 
-Mais adapte le fichier a :
+Adapte ensuite le fichier a :
 - ma stack
 - mes outils
 - mes commandes
 - mon architecture
 - mes conventions
-- mon projet concret
 
-Voici la base :
+Remplace les references Python ou hexagonales si elles ne collent pas a mon projet.
+
+Je veux un vrai CLAUDE.md final, propre, concis et directement exploitable.
 
 [COLLER ICI LE CLAUDE.md DE BASE]</pre>
           </div>
