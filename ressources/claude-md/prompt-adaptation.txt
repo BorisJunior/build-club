@@ -3,12 +3,18 @@
 ```txt
 Je vais te donner une base de fichier CLAUDE.md.
 
-Je ne veux pas que tu le copies tel quel.
+Important :
+- cette base vient d'un vrai workflow de developpement
+- elle est volontairement exigeante
+- elle est plutot ecrite avec une culture Python / checks stricts / architecture propre
+
+Je ne veux pas que tu la copies telle quelle.
 Je veux que tu t'en inspires fortement pour creer une version adaptee a mon projet.
 
 Conserve surtout :
 - la logique de rigueur
-- les exigences de qualite
+- l'idee des tests obligatoires
+- l'idee des checks verts avant de conclure
 - les principes de securite
 - le workflow de session
 - la definition de "termine"
@@ -19,7 +25,7 @@ Mais adapte le fichier a :
 - mes outils
 - mes commandes de verification
 - mon architecture
-- mes conventions
+- mes conventions de code
 - la nature concrete de mon projet
 
 Instructions importantes :
@@ -31,8 +37,8 @@ Instructions importantes :
    - lint
    - type-checker si pertinent
    - lancer les tests
-4. Remplace les exemples trop generiques par des commandes et conventions concretes.
-5. Supprime tout ce qui ne colle pas a ma stack.
+4. Si la base parle de black, ruff, mypy, pytest ou d'architecture hexagonale, remplace ces elements par les equivalents reels de mon projet quand ce n'est pas adapte.
+5. Garde les exigences fortes, mais retire tout ce qui ne colle pas a ma stack.
 6. Si mon projet n'a pas encore certains outils, propose une version raisonnable du fichier sans inventer une usine a gaz.
 7. Garde le resultat concis, utile et directement exploitable.
 

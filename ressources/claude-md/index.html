@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Base CLAUDE.md — Build Club</title>
-  <meta name="description" content="Une base CLAUDE.md partageable pour imposer plus de rigueur à un agent de code, avec un prompt d'adaptation à copier pour l'ajuster à sa propre stack.">
+  <title>CLAUDE.md - Le fichier que les gens sous-estiment | Build Club</title>
+  <meta name="description" content="Pourquoi un bon CLAUDE.md change la qualite de ton agent de code, ce qu'il doit contenir, et une base concrete a telecharger avec un prompt d'adaptation.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,8 +25,8 @@
   </script>
   <link rel="stylesheet" href="../../styles.css">
 </head>
-<body class="min-h-screen flex flex-col antialiased">
-  <header class="sticky top-0 z-40 w-full border-b border-zinc-200/80 bg-white/80 backdrop-blur-md">
+<body class="min-h-screen flex flex-col antialiased bg-white text-zinc-950">
+  <header class="sticky top-0 z-40 w-full border-b border-zinc-200/80 bg-white/85 backdrop-blur-md">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
       <div class="flex h-16 items-center justify-between gap-4">
         <a href="../../" class="flex items-center gap-2 group">
@@ -39,7 +39,7 @@
             Retour au club
           </a>
           <a href="./claude-md-base.txt" download="CLAUDE.md" class="accent-button inline-flex items-center justify-center rounded-md text-white px-4 py-2 shadow-sm">
-            Télécharger le fichier
+            Telecharger la base
           </a>
         </div>
       </div>
@@ -57,16 +57,20 @@
             </div>
 
             <h1 class="text-4xl sm:text-6xl tracking-tighter text-zinc-950 font-bold leading-[0.95] mb-6 font-display uppercase">
-              Une base <br> `CLAUDE.md`
+              Vous sous-estimez probablement votre <br> `CLAUDE.md`
             </h1>
 
+            <p class="max-w-xl text-base sm:text-lg text-zinc-700 leading-relaxed mb-5">
+              Beaucoup de gens pensent que tout se joue dans le prompt. En vrai, une grosse partie de la qualite vient du fichier que l'agent relit a chaque session.
+            </p>
+
             <p class="max-w-xl text-base sm:text-lg text-zinc-600 leading-relaxed mb-8">
-              Une version partageable et allégée de mon fichier <strong class="text-zinc-950">CLAUDE.md</strong>, pensée pour imposer plus de rigueur à un agent de code sans l'enfermer dans une stack ou un projet précis.
+              C'est lui qui impose la rigueur : tests, checks, architecture, securite, maniere de travailler, definition de "termine". Sans lui, un agent peut coder vite. Avec lui, il a beaucoup plus de chances de coder proprement.
             </p>
 
             <div class="flex flex-col sm:flex-row gap-4 max-w-xl">
               <a href="./claude-md-base.txt" download="CLAUDE.md" class="accent-button w-full sm:w-auto inline-flex items-center justify-center rounded-xl text-white font-medium text-sm px-6 py-3.5 transition shadow-sm group">
-                Télécharger la base
+                Telecharger le CLAUDE.md
                 <i data-lucide="download" class="w-4 h-4 ml-2"></i>
               </a>
               <button type="button" data-copy-prompt-trigger class="accent-outline w-full sm:w-auto inline-flex items-center justify-center rounded-xl font-medium text-sm px-6 py-3.5 border transition">
@@ -76,7 +80,7 @@
             </div>
 
             <p class="text-[11px] text-zinc-500 mt-5 max-w-xl leading-relaxed">
-              Ne le copie pas tel quel. Le bon usage, c'est : <strong class="text-zinc-900">tu pars de cette base</strong>, puis tu demandes à ton IA de l'adapter à ta stack, à ton architecture et à ton projet.
+              La base partagee ici reste volontairement proche d'un vrai workflow Python strict. Le but n'est pas de la copier aveuglement, mais de t'en servir comme point de depart serieux, puis de l'adapter proprement a ta stack.
             </p>
           </div>
 
@@ -87,68 +91,68 @@
                 <span></span>
                 <span></span>
               </div>
-              <span class="resource-shell__label">preview / claude-md-core</span>
+              <span class="resource-shell__label">ce que ce fichier empeche</span>
             </div>
             <div class="p-6 sm:p-7">
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div class="landing-card p-4 bg-white">
                   <div class="flex items-center gap-3 mb-3">
                     <div class="p-2 bg-zinc-950 text-white rounded-sm">
-                      <i data-lucide="shield-check" class="w-4 h-4"></i>
+                      <i data-lucide="x-circle" class="w-4 h-4"></i>
                     </div>
-                    <h2 class="text-sm font-bold text-zinc-950 font-display uppercase tracking-tight">Rigueur</h2>
+                    <h2 class="text-sm font-bold text-zinc-950 font-display uppercase tracking-tight">Code sans tests</h2>
                   </div>
                   <p class="text-xs text-zinc-500 leading-relaxed">
-                    Exigences non négociables, checks obligatoires, validation réelle avant de considérer une tâche terminée.
+                    L'agent ne peut plus juste produire du code et supposer que "ca devrait marcher".
                   </p>
                 </div>
 
                 <div class="landing-card p-4 bg-white">
                   <div class="flex items-center gap-3 mb-3">
                     <div class="p-2 bg-zinc-950 text-white rounded-sm">
-                      <i data-lucide="workflow" class="w-4 h-4"></i>
+                      <i data-lucide="alert-triangle" class="w-4 h-4"></i>
                     </div>
-                    <h2 class="text-sm font-bold text-zinc-950 font-display uppercase tracking-tight">Workflow</h2>
+                    <h2 class="text-sm font-bold text-zinc-950 font-display uppercase tracking-tight">Checks rouges ignores</h2>
                   </div>
                   <p class="text-xs text-zinc-500 leading-relaxed">
-                    Comprendre, planifier, modifier, vérifier, corriger, conclure. Pas juste “code-moi ça”.
+                    Le fichier force le lancement des vrais checks avant de considerer une tache terminee.
                   </p>
                 </div>
 
                 <div class="landing-card p-4 bg-white">
                   <div class="flex items-center gap-3 mb-3">
                     <div class="p-2 bg-zinc-950 text-white rounded-sm">
-                      <i data-lucide="check-check" class="w-4 h-4"></i>
+                      <i data-lucide="blocks" class="w-4 h-4"></i>
                     </div>
-                    <h2 class="text-sm font-bold text-zinc-950 font-display uppercase tracking-tight">Validation</h2>
+                    <h2 class="text-sm font-bold text-zinc-950 font-display uppercase tracking-tight">Architecture cassee</h2>
                   </div>
                   <p class="text-xs text-zinc-500 leading-relaxed">
-                    Le fichier force une vraie définition de “fini” au lieu d'une simple impression que “ça devrait marcher”.
+                    Tu peux lui rappeler noir sur blanc de respecter tes couches, tes conventions et ta structure.
                   </p>
                 </div>
 
                 <div class="landing-card p-4 bg-white">
                   <div class="flex items-center gap-3 mb-3">
                     <div class="p-2 bg-zinc-950 text-white rounded-sm">
-                      <i data-lucide="lock-keyhole" class="w-4 h-4"></i>
+                      <i data-lucide="message-square-warning" class="w-4 h-4"></i>
                     </div>
-                    <h2 class="text-sm font-bold text-zinc-950 font-display uppercase tracking-tight">Sécurité</h2>
+                    <h2 class="text-sm font-bold text-zinc-950 font-display uppercase tracking-tight">Travail en roue libre</h2>
                   </div>
                   <p class="text-xs text-zinc-500 leading-relaxed">
-                    Garde-fous simples : pas de secrets en dur, pas de raccourcis dangereux, prudence sur les zones sensibles.
+                    Le workflow de session impose de comprendre, planifier, coder, tester et conclure proprement.
                   </p>
                 </div>
               </div>
 
               <div class="mt-6 border-t border-zinc-200 pt-5">
                 <p class="text-[10px] font-mono font-bold uppercase tracking-[0.22em] text-zinc-500 mb-3">
-                  volontairement retiré de cette version
+                  cette version reste volontairement sans
                 </p>
                 <div class="flex flex-wrap gap-2">
                   <span class="text-[10px] font-mono font-bold uppercase tracking-widest px-2.5 py-1 rounded-sm border border-zinc-200 text-zinc-500">maps</span>
                   <span class="text-[10px] font-mono font-bold uppercase tracking-widest px-2.5 py-1 rounded-sm border border-zinc-200 text-zinc-500">roadmap</span>
-                  <span class="text-[10px] font-mono font-bold uppercase tracking-widest px-2.5 py-1 rounded-sm border border-zinc-200 text-zinc-500">specs projet</span>
-                  <span class="text-[10px] font-mono font-bold uppercase tracking-widest px-2.5 py-1 rounded-sm border border-zinc-200 text-zinc-500">docs internes</span>
+                  <span class="text-[10px] font-mono font-bold uppercase tracking-widest px-2.5 py-1 rounded-sm border border-zinc-200 text-zinc-500">journal projet</span>
+                  <span class="text-[10px] font-mono font-bold uppercase tracking-widest px-2.5 py-1 rounded-sm border border-zinc-200 text-zinc-500">specs internes</span>
                 </div>
               </div>
             </div>
@@ -161,10 +165,56 @@
       <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
-            <span class="text-[10px] font-bold tracking-[0.3em] text-emerald-600 uppercase font-mono">01. Le fichier</span>
-            <h2 class="text-3xl sm:text-4xl text-zinc-950 mt-4 font-bold font-display tracking-tight uppercase">Ce que tu télécharges</h2>
+            <span class="text-[10px] font-bold tracking-[0.3em] text-emerald-600 uppercase font-mono">01. Pourquoi c'est fort</span>
+            <h2 class="text-3xl sm:text-4xl text-zinc-950 mt-4 font-bold font-display tracking-tight uppercase">Le vrai levier, c'est la memoire persistante</h2>
             <p class="text-sm text-zinc-500 mt-4 max-w-md leading-relaxed">
-              Une base de `CLAUDE.md` recentrée sur la discipline de travail : qualité, sécurité, workflow, validation. Pas de dépendance à Python, pas de dépendance à un projet précis.
+              Le prompt du moment peut etre bon. Mais si ton agent n'a aucun cadre permanent, il peut rebasculer a chaque session dans un mode brouillon, pressa ou incoherent.
+            </p>
+            <p class="text-sm text-zinc-500 mt-4 max-w-md leading-relaxed">
+              Un bon `CLAUDE.md` devient une sorte de garde-fou permanent. Il rappelle en continu comment travailler, quoi verifier et ce qu'on n'a pas le droit de bacler.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="landing-card p-5 bg-white">
+              <p class="text-[10px] font-mono font-bold uppercase tracking-[0.18em] text-emerald-600 mb-3">Memoire</p>
+              <h3 class="text-sm font-bold text-zinc-950 font-display uppercase tracking-tight mb-2">Toujours relu par l'agent</h3>
+              <p class="text-xs text-zinc-500 leading-relaxed">Tu n'as pas besoin de repeter a chaque session "teste, verifie, respecte l'archi". Le fichier le fait pour toi.</p>
+            </div>
+
+            <div class="landing-card p-5 bg-white">
+              <p class="text-[10px] font-mono font-bold uppercase tracking-[0.18em] text-emerald-600 mb-3">Discipline</p>
+              <h3 class="text-sm font-bold text-zinc-950 font-display uppercase tracking-tight mb-2">Une vraie definition de termine</h3>
+              <p class="text-xs text-zinc-500 leading-relaxed">Il ne suffit plus que le code existe. Il faut qu'il soit verifie, coherent et defendable.</p>
+            </div>
+
+            <div class="landing-card p-5 bg-white">
+              <p class="text-[10px] font-mono font-bold uppercase tracking-[0.18em] text-emerald-600 mb-3">Qualite</p>
+              <h3 class="text-sm font-bold text-zinc-950 font-display uppercase tracking-tight mb-2">Checks et tests explicites</h3>
+              <p class="text-xs text-zinc-500 leading-relaxed">Tu peux y mettre les vraies commandes de ta stack, au lieu de laisser l'agent deviner ce qu'il faut verifier.</p>
+            </div>
+
+            <div class="landing-card p-5 bg-white">
+              <p class="text-[10px] font-mono font-bold uppercase tracking-[0.18em] text-emerald-600 mb-3">Structure</p>
+              <h3 class="text-sm font-bold text-zinc-950 font-display uppercase tracking-tight mb-2">Conventions et architecture</h3>
+              <p class="text-xs text-zinc-500 leading-relaxed">Tu peux lui interdire de melanger les couches, de contourner la structure du repo ou de bricoler juste pour aller vite.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-compact section-wash border-b border-zinc-200/70">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <span class="text-[10px] font-bold tracking-[0.3em] text-emerald-600 uppercase font-mono">02. Ce que tu telecharges</span>
+            <h2 class="text-3xl sm:text-4xl text-zinc-950 mt-4 font-bold font-display tracking-tight uppercase">Une base concrete, pas un modele vide</h2>
+            <p class="text-sm text-zinc-500 mt-4 max-w-md leading-relaxed">
+              La base partagee ici n'est pas un vague rappel de bonnes pratiques. Elle garde le ton d'un vrai fichier de production : tests obligatoires, checks explicites, architecture, workflow et definition claire du travail bien fait.
+            </p>
+            <p class="text-sm text-zinc-500 mt-4 max-w-md leading-relaxed">
+              Elle reste orientee Python propre et architecture serieuse. C'est volontaire. Ensuite, le prompt d'adaptation sert a la traduire dans ta propre stack.
             </p>
           </div>
 
@@ -175,51 +225,55 @@
                 <span></span>
                 <span></span>
               </div>
-              <span class="resource-shell__label">claude-md-base.txt</span>
+              <span class="resource-shell__label">extrait / base concrete</span>
             </div>
-            <pre class="resource-code"># Guide Projet - Base de Rigueur
+            <pre class="resource-code">## Exigences non negociables
 
-## Role du fichier
-- imposer une maniere de travailler
-- ne pas juste produire du code "qui marche"
-
-## Exigences non negociables
-- qualite minimale
-- checks obligatoires
-- tests quand c'est pertinent
+- tests obligatoires
+- checks verts avant de conclure
 - pas d'over-engineering
+- typage quand la stack le permet
+- securite minimale
 
-## Securite minimale
-- pas de secrets en dur
-- validation des inputs
-- prudence sur les zones sensibles
+## Checks explicites
 
-## Regles de travail
-- comprendre
-- planifier
-- modifier
-- verifier
-- corriger
-- conclure
+uv run black .
+uv run ruff check .
+uv run mypy .
+uv run pytest tests -v
 
-## Definition de "termine"
-- besoin traite
-- code coherent
-- checks lances
-- erreurs corrigees</pre>
+## Architecture
+
+1. le domaine ne depend jamais de l'infrastructure
+2. l'application n'importe pas l'infrastructure directement
+3. l'infrastructure implemente les ports
+
+## Workflow de session
+
+1. comprendre
+2. planifier
+3. coder
+4. expliquer
+5. tester
+6. verifier
+7. corriger
+8. conclure</pre>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section-compact section-wash border-b border-zinc-200/70">
+    <section class="section-compact section-wash-soft border-b border-zinc-200/70">
       <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
-            <span class="text-[10px] font-bold tracking-[0.3em] text-emerald-600 uppercase font-mono">02. Le prompt</span>
-            <h2 class="text-3xl sm:text-4xl text-zinc-950 mt-4 font-bold font-display tracking-tight uppercase">Le copier, puis l'adapter</h2>
+            <span class="text-[10px] font-bold tracking-[0.3em] text-emerald-600 uppercase font-mono">03. Le prompt</span>
+            <h2 class="text-3xl sm:text-4xl text-zinc-950 mt-4 font-bold font-display tracking-tight uppercase">Tu l'adaptes a ta stack, pas l'inverse</h2>
             <p class="text-sm text-zinc-500 mt-4 max-w-md leading-relaxed">
-              Le prompt sert à demander à ton IA de partir de cette base pour créer une version vraiment adaptée à ton repo, à tes commandes de vérification et à ta stack.
+              Le bon usage, ce n'est pas de copier ce fichier tel quel dans n'importe quel projet. Le bon usage, c'est de coller cette base dans ton IA avec le prompt ci-dessous pour lui demander de la traduire proprement dans ta stack.
+            </p>
+            <p class="text-sm text-zinc-500 mt-4 max-w-md leading-relaxed">
+              Si tu es en TypeScript, Laravel, Go, Rust ou autre, le prompt sert justement a remplacer les commandes, les conventions et les references d'architecture par les bonnes pour ton contexte.
             </p>
 
             <div class="mt-6 flex flex-col sm:flex-row gap-3">
@@ -242,44 +296,29 @@
             </div>
             <pre class="resource-code" data-prompt-text>Je vais te donner une base de fichier CLAUDE.md.
 
-Je ne veux pas que tu le copies tel quel.
+Important :
+- cette base vient d'un vrai workflow de developpement
+- elle est volontairement exigeante
+- elle est plutot ecrite avec une culture Python / checks stricts / architecture propre
+
+Je ne veux pas que tu la copies telle quelle.
 Je veux que tu t'en inspires fortement pour creer une version adaptee a mon projet.
 
 Conserve surtout :
 - la logique de rigueur
-- les exigences de qualite
+- l'idee des tests obligatoires
+- l'idee des checks verts avant de conclure
 - les principes de securite
 - le workflow de session
 - la definition de "termine"
-- les garde-fous contre le code brouillon
 
 Mais adapte le fichier a :
-- ma stack technique
+- ma stack
 - mes outils
-- mes commandes de verification
+- mes commandes
 - mon architecture
 - mes conventions
-- la nature concrete de mon projet
-
-Instructions importantes :
-
-1. Commence par analyser mon projet si tu as acces au codebase.
-2. Si certaines informations importantes ne sont pas evidentes, pose-moi les questions minimales necessaires.
-3. Detecte ou propose les bonnes commandes pour :
-   - formatter
-   - lint
-   - type-checker si pertinent
-   - lancer les tests
-4. Remplace les exemples trop generiques par des commandes et conventions concretes.
-5. Supprime tout ce qui ne colle pas a ma stack.
-6. Si mon projet n'a pas encore certains outils, propose une version raisonnable du fichier sans inventer une usine a gaz.
-7. Garde le resultat concis, utile et directement exploitable.
-
-Je veux en sortie :
-- un vrai fichier CLAUDE.md final
-- propre
-- coherent avec mon projet
-- sans sections decoratives inutiles
+- mon projet concret
 
 Voici la base :
 
@@ -289,28 +328,28 @@ Voici la base :
       </div>
     </section>
 
-    <section class="section-compact section-wash-soft">
+    <section class="section-compact section-wash">
       <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-        <span class="text-[10px] font-bold tracking-[0.3em] text-emerald-600 uppercase font-mono">03. Utilisation</span>
-        <h2 class="text-3xl text-zinc-950 mt-4 font-bold font-display tracking-tight uppercase">Comment t'en servir vite</h2>
+        <span class="text-[10px] font-bold tracking-[0.3em] text-emerald-600 uppercase font-mono">04. Utilisation</span>
+        <h2 class="text-3xl text-zinc-950 mt-4 font-bold font-display tracking-tight uppercase">Le workflow simple</h2>
 
         <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-5 text-left">
           <div class="landing-card p-5 bg-white">
             <p class="text-[10px] font-mono font-bold uppercase tracking-[0.18em] text-emerald-600 mb-3">Etape 1</p>
-            <h3 class="text-sm font-bold text-zinc-950 font-display uppercase tracking-tight mb-2">Télécharge la base</h3>
-            <p class="text-xs text-zinc-500 leading-relaxed">Tu récupères la structure et les garde-fous essentiels sans les parties trop projet-spécifiques.</p>
+            <h3 class="text-sm font-bold text-zinc-950 font-display uppercase tracking-tight mb-2">Recupere la base</h3>
+            <p class="text-xs text-zinc-500 leading-relaxed">Tu pars d'un fichier deja exigeant, avec de vraies attentes de qualite et pas juste des slogans.</p>
           </div>
 
           <div class="landing-card p-5 bg-white">
             <p class="text-[10px] font-mono font-bold uppercase tracking-[0.18em] text-emerald-600 mb-3">Etape 2</p>
-            <h3 class="text-sm font-bold text-zinc-950 font-display uppercase tracking-tight mb-2">Copie le prompt</h3>
-            <p class="text-xs text-zinc-500 leading-relaxed">Tu le donnes à ton IA avec la base pour qu'elle la traduise dans le langage réel de ton projet.</p>
+            <h3 class="text-sm font-bold text-zinc-950 font-display uppercase tracking-tight mb-2">Ajoute le prompt</h3>
+            <p class="text-xs text-zinc-500 leading-relaxed">Tu demandes a ton IA d'adapter la base a ta stack au lieu de repartir d'un fichier vide trop generique.</p>
           </div>
 
           <div class="landing-card p-5 bg-white">
             <p class="text-[10px] font-mono font-bold uppercase tracking-[0.18em] text-emerald-600 mb-3">Etape 3</p>
-            <h3 class="text-sm font-bold text-zinc-950 font-display uppercase tracking-tight mb-2">Adapte sans surcharger</h3>
-            <p class="text-xs text-zinc-500 leading-relaxed">Garde les règles fortes, remplace les commandes, enlève le bruit. Le but n'est pas d'écrire un roman.</p>
+            <h3 class="text-sm font-bold text-zinc-950 font-display uppercase tracking-tight mb-2">Durcis ensuite</h3>
+            <p class="text-xs text-zinc-500 leading-relaxed">Quand tu auras tes maps, ta roadmap ou tes docs de projet, tu pourras enrichir le fichier encore plus.</p>
           </div>
         </div>
       </div>
@@ -330,7 +369,7 @@ Voici la base :
         try {
           await navigator.clipboard.writeText(promptNode.textContent.trim());
           if (statusNode) {
-            statusNode.textContent = "Copié";
+            statusNode.textContent = "Copie";
             window.setTimeout(() => {
               statusNode.textContent = "";
             }, 2200);

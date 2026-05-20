@@ -1,28 +1,22 @@
-# Guide Projet - Base de Rigueur
+# Base CLAUDE.md - Rigueur de developpement
 
-Ce fichier sert a imposer une maniere de travailler a l'agent de code.
+Ce fichier n'est pas une note decorative.
+C'est le cadre permanent qui dit a l'agent comment il doit travailler.
 
-Ce n'est pas juste une note projet.
-C'est un cadre permanent pour obtenir un code plus propre, plus teste et plus fiable.
+Sans cadre clair, un agent peut :
+- coder trop vite
+- oublier les tests
+- laisser des checks rouges
+- casser l'architecture
+- annoncer "c'est fini" trop tot
 
----
-
-## Role du fichier
-
-Ton role n'est pas seulement de produire du code qui "marche".
-
-Tu dois :
-- comprendre la demande
-- avancer avec methode
-- respecter la structure existante du projet
-- verifier ton travail
-- ne jamais declarer une tache terminee tant que les checks importants ne passent pas
+Avec un bon CLAUDE.md, tu imposes une discipline.
 
 ---
 
-## Exigences non negociables
+## Ce que le fichier doit imposer
 
-### Qualite
+### Qualite non negociable
 
 - Pas de code jete vite fait sans verification.
 - Pas de tache consideree comme terminee sans validation minimale.
@@ -30,29 +24,30 @@ Tu dois :
 - Pas de complexite gratuite.
 - Pas de solution fragile si une solution simple et robuste existe.
 
-### Tests
+### Tests obligatoires
 
-- Ecris des tests quand la stack et le projet s'y pretent.
-- Si le projet a deja une strategie de test, respecte-la.
+- Pas de code sans tests quand la stack et le projet s'y pretent.
 - Si tu modifies un comportement existant, ajoute ou adapte les tests associes.
+- Si le projet a deja une strategie de test, respecte-la.
 - Si tu ne peux pas tester proprement, dis-le clairement.
 
-### Checks
+### Checks verts avant de conclure
 
-Avant de considerer une tache terminee, lance les commandes de verification pertinentes du projet, par exemple :
+Avant de considerer une tache terminee, lance les commandes de verification pertinentes.
+
+Exemple de base Python stricte :
 
 ```bash
-# A ADAPTER AU PROJET
-<commande format>
-<commande lint>
-<commande type-check>
-<commande test>
+uv run black .
+uv run ruff check .
+uv run mypy .
+uv run pytest tests -v
 ```
 
 Si un check echoue :
 - tu corriges
-- puis tu relances
-- puis tu ne continues pas en faisant comme si de rien n'etait
+- tu relances
+- tu ne continues pas comme si de rien n'etait
 
 ### Typage
 
@@ -62,61 +57,70 @@ Si un check echoue :
 
 ---
 
+## Architecture
+
+Si le projet suit une architecture propre ou hexagonale, le fichier doit l'imposer clairement.
+
+Exemple de regles utiles :
+
+1. le domaine ne depend jamais de l'infrastructure
+2. l'application peut utiliser le domaine, pas l'infrastructure directement
+3. l'infrastructure implemente les ports du domaine
+
+Le but n'est pas de reciter de la theorie.
+Le but est d'empecher l'agent de melanger toutes les couches juste pour aller vite.
+
+---
+
+## Workflow de session
+
+Un bon CLAUDE.md doit imposer une maniere de travailler.
+
+Exemple simple :
+
+1. comprendre la demande
+2. identifier les zones du projet concernees
+3. planifier rapidement
+4. coder
+5. expliquer les choix importants
+6. ecrire les tests
+7. lancer les checks
+8. corriger si besoin
+9. conclure seulement quand c'est vraiment valide
+
+Quand la tache est un peu large :
+- avance par sous-phases
+- valide chaque sous-phase avant de passer a la suivante
+
+---
+
+## Expliquer pendant qu'on code
+
+Le fichier peut aussi imposer a l'agent de ne pas coder en silence.
+
+Avant de coder :
+- dire ce qu'il va faire
+- dire pourquoi il choisit cette direction
+
+Pendant :
+- signaler les choix techniques importants
+- signaler quand il lance les checks
+
+Apres :
+- dire ce qui a ete fait
+- dire les points d'attention
+
+Ca force plus de rigueur et ca permet de detecter plus vite les mauvaises directions.
+
+---
+
 ## Securite minimale
 
 - Ne mets jamais de secrets en dur dans le code.
 - Valide les inputs quand c'est pertinent.
 - Evite les raccourcis dangereux "juste pour que ca marche".
 - Respecte les bonnes pratiques de base de la stack utilisee.
-- Si une action touche a l'auth, aux permissions, aux donnees sensibles ou au paiement, sois particulierement prudent.
-
----
-
-## Regles de travail
-
-### Avant de coder
-
-- Reformule mentalement ou explicitement la demande.
-- Identifie ce qui est flou.
-- Si la demande est ambiguë, pose des questions au lieu d'inventer.
-- Repere les fichiers et zones du projet probablement concernes.
-
-### Pendant le travail
-
-Tu avances de maniere structuree :
-
-1. comprendre
-2. planifier
-3. modifier
-4. verifier
-5. corriger si besoin
-6. conclure
-
-Quand la tache est un peu large :
-- avance par sous-etapes
-- valide chaque sous-etape avant de passer a la suivante
-
-### Communication
-
-Quand tu travailles dans un environnement interactif :
-- explique brievement ce que tu fais
-- annonce les changements importants
-- signale quand tu lances des checks
-- signale les blocages ou hypotheses
-
-Tu ne dois pas :
-- cacher les erreurs
-- faire semblant qu'un check est passe s'il a echoue
-- annoncer "c'est fini" sans verification reelle
-
----
-
-## Respect du projet
-
-- Respecte les conventions deja presentes dans le repo.
-- Respecte la structure existante au lieu d'imposer une nouvelle organisation sans raison.
-- Si le projet suit une architecture particuliere, reste coherent avec elle.
-- Si tu vois une incoherence importante, signale-la avant de refactorer large.
+- Si ca touche a l'auth, aux permissions, aux donnees sensibles ou au paiement, sois particulierement prudent.
 
 ---
 
@@ -129,7 +133,7 @@ Une tache n'est consideree comme terminee que si :
 - les checks importants ont ete lances
 - les erreurs eventuelles ont ete corrigees
 - les tests necessaires ont ete ajoutes ou adaptes si pertinent
-- rien d'important n'est laisse cassé silencieusement
+- rien d'important n'est laisse casse silencieusement
 
 Si une partie n'a pas pu etre faite :
 - tu le dis explicitement
@@ -137,14 +141,25 @@ Si une partie n'a pas pu etre faite :
 
 ---
 
+## Ce qu'il faut toujours faire
+
+- comprendre avant d'agir
+- planifier avant de modifier
+- tester avant de conclure
+- respecter la structure existante
+- rester coherent avec l'architecture
+- demander si quelque chose est flou
+
+---
+
 ## Ce qu'il faut eviter
 
-- inventer des exigences non demandees
-- changer trop de choses d'un coup sans raison
-- ignorer les outils de verification du projet
-- contourner la structure existante juste pour aller vite
+- coder en silence
+- ignorer les checks
+- oublier les tests
+- contourner la structure du projet pour aller vite
 - declarer une tache finie alors que les checks sont rouges
-- ajouter de la complexite pour faire "ingenieur" ou "propre" alors que ce n'est pas necessaire
+- ajouter de la complexite juste pour faire "propre"
 
 ---
 
