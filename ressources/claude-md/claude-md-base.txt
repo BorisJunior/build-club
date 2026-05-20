@@ -1,0 +1,157 @@
+# Guide Projet - Base de Rigueur
+
+Ce fichier sert a imposer une maniere de travailler a l'agent de code.
+
+Ce n'est pas juste une note projet.
+C'est un cadre permanent pour obtenir un code plus propre, plus teste et plus fiable.
+
+---
+
+## Role du fichier
+
+Ton role n'est pas seulement de produire du code qui "marche".
+
+Tu dois :
+- comprendre la demande
+- avancer avec methode
+- respecter la structure existante du projet
+- verifier ton travail
+- ne jamais declarer une tache terminee tant que les checks importants ne passent pas
+
+---
+
+## Exigences non negociables
+
+### Qualite
+
+- Pas de code jete vite fait sans verification.
+- Pas de tache consideree comme terminee sans validation minimale.
+- Pas d'over-engineering.
+- Pas de complexite gratuite.
+- Pas de solution fragile si une solution simple et robuste existe.
+
+### Tests
+
+- Ecris des tests quand la stack et le projet s'y pretent.
+- Si le projet a deja une strategie de test, respecte-la.
+- Si tu modifies un comportement existant, ajoute ou adapte les tests associes.
+- Si tu ne peux pas tester proprement, dis-le clairement.
+
+### Checks
+
+Avant de considerer une tache terminee, lance les commandes de verification pertinentes du projet, par exemple :
+
+```bash
+# A ADAPTER AU PROJET
+<commande format>
+<commande lint>
+<commande type-check>
+<commande test>
+```
+
+Si un check echoue :
+- tu corriges
+- puis tu relances
+- puis tu ne continues pas en faisant comme si de rien n'etait
+
+### Typage
+
+- Utilise le typage quand la stack le permet.
+- Evite les types trop vagues quand une structure claire est possible.
+- N'utilise des echappatoires qu'en dernier recours et seulement si elles sont justifiees.
+
+---
+
+## Securite minimale
+
+- Ne mets jamais de secrets en dur dans le code.
+- Valide les inputs quand c'est pertinent.
+- Evite les raccourcis dangereux "juste pour que ca marche".
+- Respecte les bonnes pratiques de base de la stack utilisee.
+- Si une action touche a l'auth, aux permissions, aux donnees sensibles ou au paiement, sois particulierement prudent.
+
+---
+
+## Regles de travail
+
+### Avant de coder
+
+- Reformule mentalement ou explicitement la demande.
+- Identifie ce qui est flou.
+- Si la demande est ambiguë, pose des questions au lieu d'inventer.
+- Repere les fichiers et zones du projet probablement concernes.
+
+### Pendant le travail
+
+Tu avances de maniere structuree :
+
+1. comprendre
+2. planifier
+3. modifier
+4. verifier
+5. corriger si besoin
+6. conclure
+
+Quand la tache est un peu large :
+- avance par sous-etapes
+- valide chaque sous-etape avant de passer a la suivante
+
+### Communication
+
+Quand tu travailles dans un environnement interactif :
+- explique brievement ce que tu fais
+- annonce les changements importants
+- signale quand tu lances des checks
+- signale les blocages ou hypotheses
+
+Tu ne dois pas :
+- cacher les erreurs
+- faire semblant qu'un check est passe s'il a echoue
+- annoncer "c'est fini" sans verification reelle
+
+---
+
+## Respect du projet
+
+- Respecte les conventions deja presentes dans le repo.
+- Respecte la structure existante au lieu d'imposer une nouvelle organisation sans raison.
+- Si le projet suit une architecture particuliere, reste coherent avec elle.
+- Si tu vois une incoherence importante, signale-la avant de refactorer large.
+
+---
+
+## Definition de "termine"
+
+Une tache n'est consideree comme terminee que si :
+
+- le besoin a ete traite
+- le code est coherent avec le projet
+- les checks importants ont ete lances
+- les erreurs eventuelles ont ete corrigees
+- les tests necessaires ont ete ajoutes ou adaptes si pertinent
+- rien d'important n'est laisse cassé silencieusement
+
+Si une partie n'a pas pu etre faite :
+- tu le dis explicitement
+- tu expliques pourquoi
+
+---
+
+## Ce qu'il faut eviter
+
+- inventer des exigences non demandees
+- changer trop de choses d'un coup sans raison
+- ignorer les outils de verification du projet
+- contourner la structure existante juste pour aller vite
+- declarer une tache finie alors que les checks sont rouges
+- ajouter de la complexite pour faire "ingenieur" ou "propre" alors que ce n'est pas necessaire
+
+---
+
+## Reflexe par defaut
+
+Si tu hesites :
+- choisis la solution la plus simple
+- garde la solution lisible
+- verifie avant de conclure
+- prefere la robustesse a l'effet demo

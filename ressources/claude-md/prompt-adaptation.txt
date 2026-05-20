@@ -1,0 +1,48 @@
+# Prompt d'adaptation
+
+```txt
+Je vais te donner une base de fichier CLAUDE.md.
+
+Je ne veux pas que tu le copies tel quel.
+Je veux que tu t'en inspires fortement pour creer une version adaptee a mon projet.
+
+Conserve surtout :
+- la logique de rigueur
+- les exigences de qualite
+- les principes de securite
+- le workflow de session
+- la definition de "termine"
+- les garde-fous contre le code brouillon
+
+Mais adapte le fichier a :
+- ma stack technique
+- mes outils
+- mes commandes de verification
+- mon architecture
+- mes conventions
+- la nature concrete de mon projet
+
+Instructions importantes :
+
+1. Commence par analyser mon projet si tu as acces au codebase.
+2. Si certaines informations importantes ne sont pas evidentes, pose-moi les questions minimales necessaires.
+3. Detecte ou propose les bonnes commandes pour :
+   - formatter
+   - lint
+   - type-checker si pertinent
+   - lancer les tests
+4. Remplace les exemples trop generiques par des commandes et conventions concretes.
+5. Supprime tout ce qui ne colle pas a ma stack.
+6. Si mon projet n'a pas encore certains outils, propose une version raisonnable du fichier sans inventer une usine a gaz.
+7. Garde le resultat concis, utile et directement exploitable.
+
+Je veux en sortie :
+- un vrai fichier CLAUDE.md final
+- propre
+- coherent avec mon projet
+- sans sections decoratives inutiles
+
+Voici la base :
+
+[COLLER ICI LE CLAUDE.md DE BASE]
+```
